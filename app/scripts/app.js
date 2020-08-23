@@ -44,11 +44,14 @@ $(function(){
                 }
             }
             if (countCheckboxTrue == $(this).parents('ul.js-children-checkbox').find('li').length) {
-                $(this).parents('.js-parent-checkbox').find('.js-first-checkbox').addClass('bold')
                 $(this).parents('.js-parent-checkbox').find('.js-first-checkbox input[type="checkbox"]').prop('checked', true)
             } else {
-                $(this).parents('.js-parent-checkbox').find('.js-first-checkbox').removeClass('bold')
                 $(this).parents('.js-parent-checkbox').find('.js-first-checkbox input[type="checkbox"]').prop('checked', false)
+            }
+            if (countCheckboxTrue) {
+                $(this).parents('.js-parent-checkbox').find('.js-first-checkbox').addClass('bold')
+            } else {
+                $(this).parents('.js-parent-checkbox').find('.js-first-checkbox').removeClass('bold')
             }
         }
     })
